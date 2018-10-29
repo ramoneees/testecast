@@ -26,17 +26,14 @@
 			<input type="number" class="form-control input-md" placeholder="CPF"
 				ng-model="pessoa.cpf"> <input type="text"
 				class="form-control input-md" placeholder="NOME"
-				ng-model="pessoa.nome"> <input type="text"
-				class="form-control input-md" placeholder="TIPO"
-				ng-model="pessoa.tipoLogradouro"> <select
-				ng-model="pessoa.logradouro" class="custom-select">
-
+				ng-model="pessoa.nome"> <select ng-model="pessoa.logradouro"
+				class="custom-select">
 				<option value="">Tipo de Logradouro</option>
 				<option value="casa">casa</option>
 				<option value="apartamento">apartamento</option>
-			</select> <input type="text" class="form-control input-md"
+			</select> <input type="number" class="form-control input-md"
 				placeholder="NUMERO" ng-model="pessoa.numero"> <input
-				type="number" class="form-control input-md" placeholder="BAIRRO"
+				type="text" class="form-control input-md" placeholder="BAIRRO"
 				ng-model="pessoa.bairro"> <input type="text"
 				class="form-control input-md" placeholder="ESTADO"
 				ng-model="pessoa.estado"> <input type="text"
@@ -88,7 +85,7 @@
 
 				<td><button class="btn btn-danger"
 						ng-click="deletaPessoa(pessoa)">Excluir</button></td>
-				<td>{{ pessoa.id }}</td>
+				<td style="visibility: hidden">{{ pessoa.id }}</td>
 
 			</tr>
 		</table>
