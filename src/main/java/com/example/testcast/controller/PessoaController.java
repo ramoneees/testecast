@@ -34,9 +34,8 @@ public class PessoaController {
 		return new ResponseEntity<>(pessoaService.save(pessoa), HttpStatus.CREATED);
 
 	}
-	
-//	@DeleteMapping(value = "/{id}")
-	@RequestMapping(value = "pessoa/delete/{id}", method = RequestMethod.DELETE)
+
+	@RequestMapping(value = "/pessoas/delete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Pessoa> removerPessoa(@PathParam("id") Long id) {
 		pessoaService.remove(id);
 		return new ResponseEntity<>(HttpStatus.OK);
@@ -44,7 +43,7 @@ public class PessoaController {
 
 	@RequestMapping(value = "/rest/pessoa", method = RequestMethod.GET)
 	public ResponseEntity listarPessoa(@PathParam("id") Long id) {
-		return new ResponseEntity<>(pessoaService.buscar(id),HttpStatus.OK);
+		return new ResponseEntity<>(pessoaService.buscar(id), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/all")

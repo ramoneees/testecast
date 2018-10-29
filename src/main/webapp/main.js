@@ -34,7 +34,7 @@ app.controller("PessoaController", function($scope, $http, $window) {
 		$http({
 			method : 'DELETE',
 			url : '/pessoas/pessoa/delete/',
-			params: {id :pessoa.id}
+			params: {id:pessoa.id}
 		}).then(_success, _error);
 
 	};

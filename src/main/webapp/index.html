@@ -25,9 +25,11 @@
 
 			<input type="number" class="form-control input-md" placeholder="CPF"
 				ng-model="pessoa.cpf"> <input type="text"
-				class="form-control input-md" placeholder="NOME"
-				ng-model="pessoa.nome"> <select ng-model="pessoa.logradouro"
-				class="custom-select">
+				class="form-control input-md" placeholder="NOME"ng-model="pessoa.nome">
+				<input type="text"
+				class="form-control input-md" placeholder="LOGRADOURO"ng-model="pessoa.logradouro">
+				<select
+				ng-model="pessoa.tipoLogradouro" class="custom-select">
 				<option value="">Tipo de Logradouro</option>
 				<option value="casa">casa</option>
 				<option value="apartamento">apartamento</option>
@@ -56,6 +58,7 @@
 				<tr>
 					<th>CPF</th>
 					<th>NOME</th>
+					<th>LOGRADOURO</th>
 					<th>TIPO LOGRADOURO</th>
 					<th>NUMERO</th>
 					<th>BAIRRO</th>
@@ -63,7 +66,6 @@
 					<th>ESTADO</th>
 					<th>TELEFONE CELULAR</th>
 					<th>TELEFONE FIXO</th>
-					<th>LOGRADOURO</th>
 					<th>EDITAR</th>
 					<th>DELETAR</th>
 				</tr>
@@ -72,6 +74,7 @@
 			<tr ng-repeat="pessoa in pessoas">
 				<td>{{ pessoa.cpf }}</td>
 				<td>{{ pessoa.nome }}</td>
+				<td>{{ pessoa.logradouro }}</td>
 				<td>{{ pessoa.tipoLogradouro }}</td>
 				<td>{{ pessoa.numero }}</td>
 				<td>{{ pessoa.bairro }}</td>
@@ -79,7 +82,6 @@
 				<td>{{ pessoa.estado }}</td>
 				<td>{{ pessoa.telefoneCelular }}</td>
 				<td>{{ pessoa.telefoneFixo }}</td>
-				<td>{{ pessoa.logradouro }}</td>
 				<td><button class="btn btn-warning"
 						ng-click="carregarPessoa(pessoa)">Editar</button></td>
 
