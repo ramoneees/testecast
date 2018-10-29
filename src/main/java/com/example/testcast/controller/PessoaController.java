@@ -34,9 +34,10 @@ public class PessoaController {
 		return new ResponseEntity<>(pessoaService.save(pessoa), HttpStatus.CREATED);
 
 	}
-
-	@RequestMapping(value = "/pessoa/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<Pessoa> removerPessoa(@PathVariable("id") Long id) {
+	
+//	@DeleteMapping(value = "/{id}")
+	@RequestMapping(value = "pessoa/delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Pessoa> removerPessoa(@PathParam("id") Long id) {
 		pessoaService.remove(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

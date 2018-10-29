@@ -30,10 +30,11 @@ app.controller("PessoaController", function($scope, $http, $window) {
 	}
 
 	$scope.deletaPessoa = function(pessoa) {
-
+		/* $http.delete("/pessoa/delete"); */
 		$http({
 			method : 'DELETE',
-			url : '/pessoa/delete'
+			url : '/pessoas/pessoa/delete/',
+			params: {id :pessoa.id}
 		}).then(_success, _error);
 
 	};
@@ -66,7 +67,7 @@ app.controller("PessoaController", function($scope, $http, $window) {
 							+ status + "<hr />headers: " + header
 							+ "<hr />config: " + config;
 				});
-		
+
 		window.location = '/index.html';
 
 	};
