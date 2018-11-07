@@ -18,6 +18,10 @@ app.controller("PessoaController", function($scope, $http, $window) {
 	// Now load the data from server
 	_listaPessoas();
 
+	function reload() {
+		$window.location.reload();
+	}
+
 	function _listaPessoas() {
 		$http({
 			method : 'GET',
@@ -33,9 +37,13 @@ app.controller("PessoaController", function($scope, $http, $window) {
 		/* $http.delete("/pessoa/delete"); */
 		$http({
 			method : 'DELETE',
-			url : '/pessoas/pessoa/delete/',
-			params: {id:pessoa.id}
-		}).then(_success, _error);
+			url : '/pessoas/pessoa/delete/{id}',
+			params : {
+				id : pessoa.id
+			}
+		});
+
+		reload();
 
 	};
 
@@ -57,19 +65,8 @@ app.controller("PessoaController", function($scope, $http, $window) {
 			}
 		}
 
-		$http.post('/pessoas', data, config).success(
-				function(data, status, headers, config) {
-					$scope.PostDataResponse = data;
-
-				}).error(
-				function(data, status, header, config) {
-					$scope.ResponseDetails = "Data: " + data + "<hr />status: "
-							+ status + "<hr />headers: " + header
-							+ "<hr />config: " + config;
-				});
-
-		window.location = '/index.html';
-
+		$http.post('/pessoas', data, config)
+		reload();
 	};
 
 });

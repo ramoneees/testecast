@@ -20,7 +20,6 @@
 
 	<div ng-controller="PessoaController">
 
-
 		<form>
 
 			<input type="text" class="form-control input-md" placeholder="CPF"
@@ -47,7 +46,7 @@
 				ng-model="pessoa.telefoneFixo">
 
 
-			<button onload="window.location.reload();" ng-click="salvarPessoa()"
+			<button onclick="reload()" ng-click="salvarPessoa()"
 				class="btn btn-success">Salvar</button>
 
 		</form>
